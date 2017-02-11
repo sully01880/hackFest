@@ -15,6 +15,9 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * Test opening/cloning of git repositories
+ */
 public class TestReadOnlyRepoManager {
 	
 	private static final Logger logger = Logger.getLogger(TestReadOnlyRepoManager.class);
@@ -24,7 +27,7 @@ public class TestReadOnlyRepoManager {
 		BasicConfigurator.configure(new ConsoleAppender(
 				new PatternLayout("%d{ISO8601} %-5p (%t) [%F:%L)] %m%n")));
 	    Logger.getRootLogger().setLevel(Level.DEBUG);
-		logger.debug("setup");
+		logger.debug("setup success");
 	}
 
 	@After

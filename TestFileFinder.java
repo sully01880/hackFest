@@ -19,6 +19,9 @@ import com.borland.connect.data_pool.PropertyMapping;
 import com.microfocus.connectorInterface.ConnectorProperties;
 import com.microfocus.connectorInterface.FoundFile;
 
+/**
+ * Test retrieval of files from Git
+ */
 public class TestFileFinder {
 	private static final Logger logger = Logger.getLogger(TestFileFinder.class);
 	
@@ -86,7 +89,7 @@ public class TestFileFinder {
 			List<FoundFile> files = fileFinder.getFilesAssociatedWithIssuedId("https://github.com/sully01880/hackFest.git", 
 					"master", "222");
 			for (FoundFile foundFile : files) {
-				logger.debug("foundFile=" + foundFile);
+				logger.debug("myfoundFile=" + foundFile);
 			}
 		} catch (IOException | GitAPIException e) {
 			logger.error(e.toString(), e);
@@ -114,6 +117,7 @@ public class TestFileFinder {
 		ConnectorProperties props = new ConnectorProperties();
 		props.addProperty(PropertyMapping.URL, "https://github.com/sully01880/hackFest.git");
 		
+		// Before and after sha1 values
 		//foundFile=FoundFile [getFileName()=chris3.txt, getCurrentVersion()=508336702a9a42b54112470868045d5404d57a2a, 
 		//getPreviousVersion()=ccd4d9f248b86ea4b19df21a5cdb6cc5f59bc8fa, getFileStatus()=updated]
 		GitFileFinder fileFinder = new GitFileFinder("C:\\temp\\hackFestTesting");
